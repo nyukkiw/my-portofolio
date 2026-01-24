@@ -32,7 +32,7 @@ export default function RootLayout({
             </main>
 
             <footer className="py-3 text-center text-xs">
-            <span>{"I'm here to stay footere"}</span>
+              <span>{"I'm here to stay footer"}</span>
             </footer>
         </body>
 </html>

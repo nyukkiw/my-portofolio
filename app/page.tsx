@@ -30,7 +30,7 @@ export default function Home() {
         <div className="flex items-center text-center justify-center">
           <CometCardDemo/>
         </div>
-        <div className="py-15 p-5 lg:p-20 text-white">
+        <div className="py-10 p-5 lg:p-20 text-white">
             <p className="mb-5">
               I'm <b>Valentino Banyu </b>, a passionate fullstack developer with expertise in building modern web applications. With a strong foundation in both frontend and backend technologies, I specialize in creating seamless user experiences and robust server-side solutions. My skill set includes proficiency in JavaScript, React, Node.js, PHP, Laravel  and database management. I thrive on solving complex problems and continuously learning new technologies to stay at the forefront of the ever-evolving tech landscape. Let's connect and build something amazing together!
             </p>
@@ -99,7 +99,7 @@ export default function Home() {
 export function CometCardDemo() {
   return (
     <CometCard>
-      <div className="flex justify-center items-center my-10">
+      <div className="flex justify-center items-center">
       <button
         type="button"
         className="flex w-80 cursor-pointer flex-col items-stretch rounded-3xl border-0 bg-[#1F2121] p-2 md:p-4"
