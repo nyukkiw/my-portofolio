@@ -115,6 +115,11 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+img {
+  image-orientation: from-image;
+}
+
+
 @font-face {
   font-family: 'RobotoCustom';
   src: url('/fonts/Roboto-VariableFont.ttf') format('truetype');
