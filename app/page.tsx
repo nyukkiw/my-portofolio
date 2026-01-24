@@ -24,13 +24,13 @@ export default function Home() {
       <BackgroundGradientAnimationDemo />
       <div className="border-b-2 border-gray-600 w-5/12 mx-auto mt-2"></div>
     </div>
-    <h1 className="text-center text-white text-3xl font-bold py-6">About</h1>
-    <div id="About" className="grid grid-cols-2 scroll-m-35"> 
-      
+    <h1 className="text-center text-white text-3xl font-bold py-10">About</h1>
+    
+    <div id="About" className="grid grid-cols-1 sm:grid-cols-2 scroll-m-35">   
         <div className="flex items-center text-center justify-center">
           <CometCardDemo/>
         </div>
-        <div className="py-15 pr-15 text-white">
+        <div className="py-15 p-5 lg:p-20 text-white">
             <p className="mb-5">
               I'm <b>Valentino Banyu </b>, a passionate fullstack developer with expertise in building modern web applications. With a strong foundation in both frontend and backend technologies, I specialize in creating seamless user experiences and robust server-side solutions. My skill set includes proficiency in JavaScript, React, Node.js, PHP, Laravel  and database management. I thrive on solving complex problems and continuously learning new technologies to stay at the forefront of the ever-evolving tech landscape. Let's connect and build something amazing together!
             </p>
@@ -51,7 +51,7 @@ export default function Home() {
 
 
       <h1 id="Projects" className="text-center scroll-m-15 text-white text-3xl font-bold py-6">Projects</h1>
-    <div  className="grid grid-cols-2 gap-5" >
+    <div  className="grid grid-cols-1 lg:grid-cols-3 gap-5" >
 
       <div><ThreeDCardDemo title="Codeflix" description="Website that streams movies and series. With Laravel, Midtrans as payment gateway, and MySQL database" imageUrl="/img/codeflix.png" /></div>
       <div><ThreeDCardDemo title="HRIS (Human resource information system)" description="Website that manage employees. With Laravel, Mazer, Brezee, and MySQL database" imageUrl="/img/mazer.png" /></div>
