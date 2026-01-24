@@ -1,21 +1,19 @@
 import Link from "next/link";
 export default function Navbar() {
     return(
-        <nav className="px-5">
-            <ul className="flex gap-2">
-                <li>
-                            <Link href="/" className="text-gray-800 font-roboto  hover:bg-white hover:rounded-xl transation duration-200">Home</Link>
-                        </li>
-                        <li className="ml-auto">
-                            <Link href="/Project" className="text-gray-800 font-roboto  hover:bg-white hover:rounded-xl transation duration-200">Project</Link>
-                        </li>
-                        <li>
-                            <Link href="/About" className="text-gray-800 font-roboto  hover:bg-white hover:rounded-xl transation duration-200">About</Link>
-                        </li>
-                        <li>
-                            <Link href="/Contact" prefetch={false} className="text-gray-800 hover:bg-white hover:rounded-xl transation duration-200">Contact</Link>
-                        </li>
-            </ul>
+        <nav className="fixed top-0 left-0 w-full z-60 bg-black/80 backdrop-blur-xs border-b-4">
+        <div className="mx-auto px-4 py-4 flex justify-between">
+           <div className="text-white font-bold text-lg">Nyukkiw's</div>
+
+            <div className="flex gap-6 text-white text-sm">
+                <a href="#Home" className="hover:text-blue-400">Home</a>
+                <a href="#About" className="hover:text-blue-400">About</a>
+                <a href="#Projects" className="hover:text-blue-400">Projects</a>
+                <a href="#Certificate" className="hover:text-blue-400">Certificate</a>
+                <a href="#Contact" className="hover:text-blue-400">Contact</a>
+
+        </div>
+        </div>
         </nav>
     )
 }
