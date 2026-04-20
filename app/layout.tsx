@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { robotoCondensed } from "./fonts";
+import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
 
 import Navbar from "@/components/Navbar";
 
@@ -22,19 +23,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-        <body className={`${robotoCondensed.variable} bg-black flex flex-col py-4 min-h-screen`}>
+
+        <body className={`${robotoCondensed.variable} bg-black  flex flex-col py-4 min-h-screen`}>
             <header>
               <Navbar/>
             </header>
 
             <main className="py-3 grow">
-            {children}
+              {children}
             </main>
 
             <footer className="py-3 text-center text-xs">
               <span>{"I'm here to stay footer"}</span>
             </footer>
         </body>
+        
 </html>
   );
 }
+

@@ -3,7 +3,6 @@ import { CometCard } from "@/components/ui/comet-card";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { Roboto } from "next/font/google";
 import {useState} from "react";
-import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { FocusCards } from "@/components/ui/focus-cards";
 import Link from "next/link";
@@ -21,13 +20,13 @@ export default function Home() {
    <>
    <div id="Home" className="bg-auto md:bg-contain">
       
-      <BackgroundGradientAnimationDemo />
+      <TypewriterEffectSmoothDemo/>
       <div className="border-b-2 border-gray-600 w-5/12 mx-auto mt-2"></div>
     </div>
     <h1 className="text-center text-white text-3xl font-bold py-10">About</h1>
     
     <div id="About" className="grid grid-cols-1 sm:grid-cols-2 scroll-m-35">   
-        <div className="flex items-center text-center justify-center">
+        <div className="flex items-center text-center justify-center m-8">
           <CometCardDemo/>
         </div>
         <div className="py-10 p-5 lg:p-20 text-white">
@@ -39,12 +38,14 @@ export default function Home() {
             </footer>
 
         </div>
-   </div>
+  </div>
+
+  
   
       <div className="border-b-2 border-gray-600 w-5/12 mx-auto mt-2"></div>
 
       <h1  id="Certificate" className="text-center scroll-m-15 text-white text-3xl font-bold py-6">My Certificate</h1>
-      <div>
+      <div className="m-8">
         <FocusCardsDemo/>
       </div>
       <div className="border-b-2 border-gray-600 w-5/12 mx-auto mt-2"></div>
@@ -90,7 +91,7 @@ export default function Home() {
     
 
 
-   </>
+  </>
   );
 }
 
@@ -133,6 +134,7 @@ export function CometCardDemo() {
     </CometCard>
   );
 }
+
 export function TypewriterEffectSmoothDemo() {
   const words = [
     {
@@ -171,28 +173,12 @@ export function TypewriterEffectSmoothDemo() {
           <a href="#Contact" className=" hover:text-black w-40 h-10 rounded-xl bg-blue-500 border dark:border-white border-transparent text-white text-sm flex items-center justify-center">
             Get in touch 
           </a>
-       
-
-        
-        
-        
-       
-      
       </div>
     </div>
   );
 }
 
-export function BackgroundGradientAnimationDemo() {
-  return (
-    <BackgroundGradientAnimation>
-      <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 text-3xl text-center md:text-4xl lg:text-7xl">
-          <TypewriterEffectSmoothDemo/>
-       
-      </div>
-    </BackgroundGradientAnimation>
-  );
-}
+
 
 export function ThreeDCardDemo({
   title = "",
@@ -264,26 +250,7 @@ export function FocusCardsDemo() {
       title: "Lesson MySQL fundamental",
       src: "/img/Certificate/MySQL.jpg",
     },
-    // {
-    //   title: "Lesson Next.js Fundamental",
-    //   src: "/img/Certificate/Next.jpg",
-    // },
-    // {
-    //   title: "Lesson NodeJS and NPM Fundamental",
-    //   src: "/img/Certificate/nodeJS and NPM lesson.jpg",
-    // },
-    // {
-    //   title: "Lesson PHP Fundamental",
-    //   src: "/img/Certificate/PHP.jpg",
-    // },
-    // {
-    //   title: "Developed a Project Express with MongoDB",
-    //   src: "/img/Certificate/project express with mongoDB.jpg",
-    // },
-    // {
-    //   title: "Lesson React Fundamental",
-    //   src: "/img/Certificate/React-Fundamental.jpg",
-    // },
+   
   ];
  
   return <FocusCards cards={cards} />;
