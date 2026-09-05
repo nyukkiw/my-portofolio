@@ -57,6 +57,7 @@ export default function Home() {
       <div><ThreeDCardDemo title="Codeflix" description="Website that streams movies and series. With Laravel, Midtrans as payment gateway, and MySQL database" imageUrl="/img/codeflix.png" /></div>
       <div><ThreeDCardDemo title="HRIS (Human resource information system)" description="Website that manage employees. With Laravel, Mazer, Brezee, and MySQL database" imageUrl="/img/mazer.png" /></div>
       <div><ThreeDCardDemo title="Android app" description="Android app for mobile devices that manage driving course. With KOTLIN and Supabase" imageUrl="/img/leadrive.png" /></div>
+      <div><ThreeDCardDemo title="NANOConnect" description="NANOConnect is a fast, responsive full-stack web app built with React (Vite) and Supabase for seamless real-time data collaboration, securely hosted on Tencent EdgeOne Makers." imageUrl="/img/nanoconnect.png" link="https://nanoconnet.edgeone.dev/" /></div>
     </div>
     
     <div className="border-b-2 border-gray-600 w-11/12 md:w-5/12 mx-auto mt-2" />
@@ -187,11 +188,35 @@ export function ThreeDCardDemo({
   title = "",
   description = "",
   imageUrl = "",
-
+  link = "",
 }) {
-  return (
+  const content = (
     <CardContainer className="inter-var">
       <CardBody className="bg-neutral-800 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/10 dark:bg-black dark:border-white/20 border-black/10 w-auto sm:w-120 h-auto rounded-xl p-6 border  ">
+        {/* accessibility badge: shows whether project has a live link */}
+        <span
+          className={`absolute -top-3 left-3 z-50 px-3 py-1 text-xs font-semibold rounded-full shadow-md ${
+            link ? "bg-emerald-600 text-white" : "bg-neutral-700 text-white"
+          }`}
+          aria-hidden="false"
+          aria-label={link ? `${title} is live` : `${title} has no live demo`}
+          title={link ? "Live — klik untuk membuka" : "No live demo"}
+        >
+          {link ? "Live" : "No live"}
+        </span>
+        {/* hover overlay: Visit button + external icon */}
+        <div className="absolute inset-0 z-40 flex items-center justify-center pointer-events-none">
+          <div className="opacity-0 group-hover/card:opacity-100 transition-opacity duration-200 pointer-events-auto">
+            {link ? (
+              <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-[var(--primary)] text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7v7m0-7L10 14" /></svg>
+                Visit
+              </a>
+            ) : (
+              <span className="inline-flex items-center gap-3 bg-neutral-700 text-white px-4 py-2 rounded-full shadow-lg">Visit</span>
+            )}
+          </div>
+        </div>
         <CardItem
           translateZ="50"
           className="text-xl font-bold text-white dark:text-white"
@@ -205,24 +230,57 @@ export function ThreeDCardDemo({
         >
           {description || "This is project description"}
         </CardItem>
-        <CardItem translateZ="100" className="w-full mt-4">
+        <CardItem translateZ="100" className="w-full mt-4 relative">
           <img
             src={imageUrl}
+            srcSet={`${imageUrl} 1x, ${imageUrl} 2x`}
             height="1000"
             width="1000"
             className="h-60 md:h-80 lg:h-96 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-            alt="project picture"
+            alt={`${title} project picture`}
             loading="lazy"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
+
+          {/* external icon in corner (shows when link present) */}
+          {link && (
+            <span className="absolute top-3 right-3 bg-black/60 p-2 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7v7m0-7L10 14" /></svg>
+            </span>
+          )}
         </CardItem>
-        <div className="flex justify-between items-center mt-20">
-          
-          
-        </div>
+        <div className="flex justify-between items-center mt-20"></div>
       </CardBody>
     </CardContainer>
   );
+
+  if (link) {
+    const openLink = () => {
+      try {
+        window.open(link, "_blank", "noopener,noreferrer");
+      } catch (e) {
+        // fallback
+        window.location.href = link;
+      }
+    };
+
+    return (
+      <div
+        role="button"
+        tabIndex={0}
+        onClick={openLink}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") openLink();
+        }}
+        aria-label={`Open ${title} project`}
+        className="cursor-pointer focus:outline-none focus:ring-4 focus:ring-[var(--secondary)] focus:ring-offset-2 rounded-xl"
+      >
+        {content}
+      </div>
+    );
+  }
+
+  return content;
 }
 
 export function FocusCardsDemo() {
