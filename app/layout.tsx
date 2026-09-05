@@ -29,6 +29,9 @@ export default function RootLayout({
               <Navbar/>
             </header>
 
+            {/* spacer so fixed navbar does not cover content */}
+            <div className="h-16 md:h-20" />
+
             <main className="py-3 grow">
               {children}
             </main>
