@@ -64,11 +64,31 @@ export default function Navbar() {
                     <div className="text-white font-extrabold text-2xl md:text-3xl">Nyukkiw's</div>
 
                     <div className="hidden md:flex gap-10 text-white text-lg items-center">
-                        <a href="#Home" className="hover:text-[var(--secondary)] px-1">Home</a>
-                        <a href="#About" className="hover:text-[var(--secondary)] px-1">About</a>
-                        <a href="#Certificate" className="hover:text-[var(--secondary)] px-1">Certificate</a>
-                        <a href="#Projects" className="hover:text-[var(--secondary)] px-1">Projects</a>
-                        <a href="#Contact" className="hover:text-[var(--secondary)] px-1">Contact</a>
+                        <a href="#Home" onClick={(event) => {
+                            event.preventDefault();
+                            setOpen(false);
+                            window.location.hash = "Home";
+                        }} className="hover:text-[var(--secondary)] px-1">Home</a>
+                        <a href="#About" onClick={(event) => {
+                            event.preventDefault();
+                            setOpen(false);
+                            window.location.hash = "About";
+                        }} className="hover:text-[var(--secondary)] px-1">About</a>
+                        <a href="#Certificate" onClick={(event) => {
+                            event.preventDefault();
+                            setOpen(false);
+                            window.location.hash = "Certificate";
+                        }} className="hover:text-[var(--secondary)] px-1">Certificate</a>
+                        <a href="#Projects" onClick={(event) => {
+                            event.preventDefault();
+                            setOpen(false);
+                            window.location.hash = "Projects";
+                        }} className="hover:text-[var(--secondary)] px-1">Projects</a>
+                        <a href="#Contact" onClick={(event) => {
+                            event.preventDefault();
+                            setOpen(false);
+                            window.location.hash = "Contact";
+                        }} className="hover:text-[var(--secondary)] px-1">Contact</a>
                     </div>
 
                      <button
@@ -89,11 +109,31 @@ export default function Navbar() {
                                 onTouchStart={(e)=>{ /* ensure capture inside menu */ }}
                                 >
                                     <div className="text-white flex flex-col gap-4 px-4 pb-4 pt-4">
-                                        <a href="#Home" onClick={() => setOpen(false)} className="hover:text-[var(--secondary)]">Home</a>
-                                        <a href="#About" onClick={() => setOpen(false)} className="hover:text-[var(--secondary)]">About</a>
-                                        <a href="#Certificate" onClick={() => setOpen(false)} className="hover:text-[var(--secondary)]">Certificate</a>
-                                        <a href="#Projects" onClick={() => setOpen(false)} className="hover:text-[var(--secondary)]">Projects</a>
-                                        <a href="#Contact" onClick={() => setOpen(false)} className="hover:text-[var(--secondary)]">Contact</a>
+                                        <a href="#Home" onClick={(event) => {
+                                            event.preventDefault();
+                                            setOpen(false);
+                                            window.location.hash = "Home";
+                                        }} className="hover:text-[var(--secondary)]">Home</a>
+                                        <a href="#About" onClick={(event) => {
+                                            event.preventDefault();
+                                            setOpen(false);
+                                            window.location.hash = "About";
+                                        }} className="hover:text-[var(--secondary)]">About</a>
+                                        <a href="#Certificate" onClick={(event) => {
+                                            event.preventDefault();
+                                            setOpen(false);
+                                            window.location.hash = "Certificate";
+                                        }} className="hover:text-[var(--secondary)]">Certificate</a>
+                                        <a href="#Projects" onClick={(event) => {
+                                            event.preventDefault();
+                                            setOpen(false);
+                                            window.location.hash = "Projects";
+                                        }} className="hover:text-[var(--secondary)]">Projects</a>
+                                        <a href="#Contact" onClick={(event) => {
+                                            event.preventDefault();
+                                            setOpen(false);
+                                            window.location.hash = "Contact";
+                                        }} className="hover:text-[var(--secondary)]">Contact</a>
                                     </div>
                                 </div>
                         </div>
